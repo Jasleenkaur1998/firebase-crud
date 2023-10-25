@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+  max-width: 400px;
+  margin: 150px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -9,34 +14,58 @@ h1 {
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+input {
+  width: 70%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button {
+  width: 30%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4caf50;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #45a049;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-container {
+  margin-top: 20px;
+}
+
+/* styles.css */
+
+/* ... (previous styles) */
+
+.user {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.user div {
+  font-size: 16px;
+  color: #333; 
+  line-height: 1.5;
+  text-align: left;
+  padding: 5px;
+}
+
+.user div u {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.user div br {
+  display: none; 
 }
