@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { addDoc, collection, doc, getDocs, updateDoc } from 'firebase/firestore';
+import { addDoc, collection, doc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore';
 import { db } from './firebase-config';
 import './App.css';
 
@@ -27,6 +27,11 @@ function App() {
     await updateDoc(userDoc, newField);
   }
 
+  const deleteUsers = async (id) => {
+    const userDoc = doc(db, 'users', id);
+    await deleteDoc(userDoc);
+  }
+
   return (
     <div className="App">
      <h1>User Details</h1>
@@ -43,7 +48,12 @@ function App() {
                 <button
                   onClick={() => {
                     handleAgeChange(user.id, user.age);
-                  }} className='age-button'>Edit Age</button>
+                  }} className='age-button'>Edit Age
+                </button>
+                <button
+                  onClick={() => deleteUsers(user.id)}
+                  className='delete-button'>Delete
+                </button>
               </div>
             </div>
           );

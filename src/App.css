@@ -87,3 +87,24 @@ button:hover {
 .age-button:hover {
   background-color: #0056b3;
 }
+
+.delete-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+  height: 40px;
+  width: 120px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button:hover {
+  background-color: #0056b3;
+}
