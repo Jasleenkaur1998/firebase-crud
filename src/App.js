@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   const addUser = async (e) => {
-    await addDoc(usersRef, { name: newName, age: newAge });
+    await addDoc(usersRef, { name: newName, age: +newAge });
   }
 
   return (
