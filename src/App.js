@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { addDoc, collection, doc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore';
 import { db } from './firebase-config';
 import './App.css';
@@ -9,17 +9,17 @@ function App() {
   const [users, setUsers] = useState([]);
   const usersRef = collection(db, 'users');
 
+  const addUser = useCallback(async () => {
+    await addDoc(usersRef, { name: newName, age: +newAge });
+  }, [newName, newAge]);
+
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(usersRef)
       setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     }
     getUsers();
-  }, []);
-
-  const addUser = async (e) => {
-    await addDoc(usersRef, { name: newName, age: +newAge });
-  }
+  }, [addUser, usersRef]);
 
   const handleAgeChange = async (id, age) => {
     const userDoc = doc(db, 'users', id);
